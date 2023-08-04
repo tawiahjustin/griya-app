@@ -1,0 +1,81 @@
+.layout {
+  display: flex;
+}
+.navbar {
+  padding: 3rem 2rem;
+  background-color: rgb(5, 5, 58);
+  color: rgba(255, 255, 255, 0.711);
+  width: 20%;
+  height: 100vh;
+}
+.navbar__profile {
+  padding: 5px;
+
+  height: 4rem;
+  display: flex;
+}
+.profile {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+.profile__name {
+  font-size: 15px;
+
+  height: 100%;
+}
+.profile__name span {
+  margin-top: 5px;
+}
+.profile__name p {
+  margin-bottom: 6px;
+}
+.navbar__links li {
+  margin: 1.1rem 0;
+}
+.division {
+  border: 0.2px solid rgba(255, 255, 255, 0.62);
+}
+
+.navbar button {
+  background-color: rgb(236, 81, 81);
+}
+/* portefeuilles */
+.griya__portefeuilles {
+  padding: 1.3rem 1rem;
+  width: 70rem;
+}
+.griya__portefeuilles-header {
+  margin-bottom: 1.3rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.btn-conatiner {
+  width: 22rem;
+  display: flex;
+  justify-content: space-between;
+}
+.portefeuilles__btn-black {
+  width: 10rem;
+  background-color: black;
+}
+.portefeuilles__btn-blue {
+  width: 10rem;
+  background-color: aqua;
+}
+.input-container input {
+  height: 2rem;
+  width: 15rem;
+}
+.table {
+  border: 1px solid rgba(0, 0, 0, 0.248);
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  border-radius: 4px;
+}
+.icon {
+  width: 1rem;
+  height: 1rem;
+}

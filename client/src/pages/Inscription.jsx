@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/griya-logo.png'
 const Inscription = () => {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  async function Register(e) {
+    e.preventDefault()
+    const response = await fetch('http://localhost:8000/inscription', {
+      method: 'POST',
+      body: JSON.stringify({ username, password, email }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+    if (response.status === 200) {
+      alert('resgistration successful')
+    } else {
+      alert('resgistration failed')
+    }
+  }
   return (
     <div className='griya__incription-page'>
       <div className='griya__inscription-container'>
@@ -9,18 +25,32 @@ const Inscription = () => {
           <img src={logo} alt='' />
         </div>
         <h3>Sign up your account</h3>
-        <form>
+        <form onSubmit={Register}>
           <div className='inscrition_form-input'>
             <label htmlFor='username'>Username</label>
-            <input type='name' placeholder='username' />
+            <input
+              type='name'
+              placeholder='username'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
           <div className='inscrition_form-input'>
             <label htmlFor='email'>Email</label>
-            <input type='email' placeholder='hello@example.com' />
+            <input
+              type='email'
+              placeholder='hello@example.com'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className='inscrition_form-input'>
             <label htmlFor='username'>Password</label>
-            <input type='password' />
+            <input
+              type='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
           <button>Sign me up</button>
         </form>

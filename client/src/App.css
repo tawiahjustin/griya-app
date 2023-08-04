@@ -6,7 +6,9 @@ a {
 img {
   max-width: 100%;
 }
-
+label {
+  font-weight: bold;
+}
 button {
   width: 100%;
   display: block;
@@ -46,9 +48,7 @@ button {
   display: flex;
   flex-direction: column;
 }
-.inscrition_form-input label {
-  font-weight: bold;
-}
+
 .inscrition_form-input input {
   display: block;
   margin-bottom: 5px;
@@ -80,13 +80,26 @@ button {
 .griya__connexion-container {
   height: 95vh;
   width: 70rem;
-
   display: flex;
 }
+
 .griya__connexion-left {
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #eee8e820;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   width: 60%;
+}
+.griya__conexion-left_info {
+  font-size: 18px;
+}
+
+.griya__conexion-left_info p {
+  margin: 2rem 0;
 }
 .griya__connexion-right {
   padding: 4rem 2rem;
@@ -94,4 +107,25 @@ button {
   border-bottom-right-radius: 1rem;
   width: 40%;
   background-color: #fff;
+}
+.griya__connexion-right form {
+}
+.connexion_form-input {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.connexion_form-input input {
+  border: 0;
+  outline: none;
+  padding: 1rem 0;
+  border-bottom: 2px solid black;
+}
+.griya__connexion-right button {
+  height: 2.5rem;
+  background-color: blue;
+  margin-bottom: 2rem;
+}
+.griya__connexion-right p {
+  margin: 1rem 0;
 }

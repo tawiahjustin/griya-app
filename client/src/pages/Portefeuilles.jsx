@@ -1,6 +1,7 @@
 import React from 'react'
-import './components.css'
-import TableRow from './TableRow'
+import { Link } from 'react-router-dom'
+import '../components/components.css'
+import { TableRow, TableRed, TableYellow } from '../components/TableRow'
 const Portefeuilles = () => {
   return (
     <main className='griya__portefeuilles'>
@@ -10,12 +11,16 @@ const Portefeuilles = () => {
           <p>La liste des operations.</p>
         </div>
         <div className='btn-conatiner'>
-          <button className='portefeuilles__btn-black'>
-            Demande de credit
-          </button>
-          <button className='portefeuilles__btn-blue'>
-            Recharge le compte
-          </button>
+          <Link to='/credit-finances'>
+            <button className='portefeuilles__btn-black'>
+              Demande de credit
+            </button>
+          </Link>
+          <Link to='/recharge-compte'>
+            <button className='portefeuilles__btn-blue'>
+              Recharge le compte
+            </button>
+          </Link>
         </div>
       </header>
       <div className='griya__portefeuilles-header input-container'>
@@ -47,11 +52,11 @@ const Portefeuilles = () => {
             <th>ACTION</th>
           </tr>
           <TableRow />
+          <TableYellow />
           <TableRow />
+          <TableYellow />
           <TableRow />
-          <TableRow />
-          <TableRow />
-          <TableRow />
+          <TableRed />
           <TableRow />
           <TableRow />
           <TableRow />

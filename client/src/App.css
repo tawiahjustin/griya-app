@@ -1,8 +1,5 @@
 /* inscription */
 
-a {
-  cursor: pointer;
-}
 img {
   max-width: 100%;
 }
@@ -17,6 +14,9 @@ button {
   border-radius: 5px;
   padding: 7px 0;
   cursor: pointer;
+}
+.information {
+  margin-bottom: 1rem;
 }
 .griya__incription-page {
   height: 100vh;

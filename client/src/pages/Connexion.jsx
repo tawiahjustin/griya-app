@@ -3,29 +3,6 @@ import { Navigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import logo from '../assets/griya-logo.png'
 const Connexion = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [redirect, setRedirect] = useState(false)
-  async function Login(e) {
-    e.preventDefault()
-    const response = await fetch('http://localhost:8000/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-    })
-
-    if (response.ok) {
-      response.json().then(() => {
-        setRedirect(true)
-      })
-    } else {
-      alert('wrong credentials')
-    }
-  }
-  if (redirect) {
-    return <Navigate to={'/'} />
-  }
   return (
     <div className='griya__connexion-page'>
       <div className='griya__connexion-container'>
@@ -52,29 +29,18 @@ const Connexion = () => {
         <div className='griya__connexion-right'>
           <h1>Sign in</h1>
           <p>Sign in by entering information below</p>
-          <form onSubmit={Login}>
+          <form>
             <div className='connexion_form-input'>
               <label htmlFor='email'>Email</label>
-              <input
-                type='email'
-                placeholder='demo@example.com'
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
-              />
+              <input type='email' placeholder='demo@example.com' />
             </div>
             <div className='connexion_form-input'>
               <label htmlFor='password'>Password</label>
-              <input
-                type='password'
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
-              />
+              <input type='password' />
             </div>
-            <button>Sign In</button>
+            <Link to='/'>
+              <button>Sign In</button>
+            </Link>
           </form>
           <p className='foot-paragraph'>
             Don't have an account? <Link to='/inscription'>Sign up</Link>
